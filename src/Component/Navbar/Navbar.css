@@ -1,0 +1,26 @@
+.navbar {
+    position: absolute;
+    top: 0px;
+    max-width: 1140px;
+    margin: 0 auto; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  
+    background-color: transparent;
+    z-index: 100;
+    color: #ffffff;
+}
+
+.nav-logo {
+    width: 80px;
+}
+
+.nav-collection {
+    display: flex;
+    justify-content: space-around;
+    flex-basis: 55%;
+}
+
+.nav-search {
+    flex-basis: 25%;
+}
