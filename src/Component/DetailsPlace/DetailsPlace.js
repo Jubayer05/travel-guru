@@ -1,6 +1,6 @@
 import { TextField } from '@material-ui/core';
 import React, { useContext } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { HappyTravel } from '../../App';
 import "./DetailPlace.css";
 
@@ -36,7 +36,9 @@ const DetailsPlace = () => {
                                  defaultValue="2020-12-10" InputLabelProps={{ shrink: true,}}/>
                             </div>
                         </div>
-                        <button className="detail-btn">Start Booking</button>
+                        <Link to="/booking">
+                            <button className="detail-btn">Start Booking</button>
+                         </Link>
                     </form>
                 </div>
             </div>

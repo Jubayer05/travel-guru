@@ -1,0 +1,51 @@
+.nav-item {
+    color: #000000;
+}
+
+.hotel-booking {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+.hotel-booking p, h4 {
+    margin: 0;
+}
+.hotel-booking h4 {
+    margin-bottom: 5px;
+}
+.hotel-booking-container {
+    display: flex;
+    justify-content: space-between;
+}
+.hotel-content-container, .travel-map {
+    width: 48%;
+}
+.hotel-content {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+.hotel-image {
+    width: 30%;
+}
+.hotel-detail {
+    width: 67%;
+}
+.hotel-detail p, h6{
+    padding: 0px;
+    margin: 0px;
+}
+.hotel-detail span {
+    font-weight: 700;
+    color: #000000;
+}
+.hotel-detail p {
+    color: #6a6a6a;
+}
+.hotel-price {
+    margin-left: 20px;
+}
+.star {
+    width: 20px;
+    margin-top: -5px;
+    margin-right: 5px;
+}

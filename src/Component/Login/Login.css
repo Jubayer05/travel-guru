@@ -1,0 +1,82 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-content {
+    margin-top: 50px;
+    text-align: center;
+    width: 400px;
+    /* height: 300px; */
+    border: 1px solid #ababab;
+}
+
+.login-account {
+    margin-top: 10px;
+}
+
+.textarea {
+    display: block;
+    margin: 20px 0;
+    width: 90%;
+}
+
+.login-remember {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.login-remember p {
+    color: #f9a51a;
+    margin-right: 20px
+}
+
+.login-btn {
+    margin-top: 20px !important;
+    background-color: #f9a51a !important;
+    outline: none !important;
+    color: #000000 !important;
+}
+
+.MuiButton-containedSecondary {
+    width: 90% !important;
+}
+
+.login-or {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.login-or span {
+    padding: 0 10px;
+}
+
+.login-or div {
+    width: 125px;
+    height: 1px;
+    background-color: #000000;
+}
+
+.login-with {
+    display: flex;
+    border: 1px solid #000;
+    justify-content: space-between;
+    align-items: center;
+    width: 300px;
+    margin: 0 auto;
+    padding: 5px;
+    border-radius: 50px;
+    margin-top: 10px;
+}
+.login-image {
+    width: 35px;
+}
+.login-with p { 
+    margin: 0;
+}
