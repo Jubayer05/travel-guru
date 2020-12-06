@@ -3,7 +3,7 @@ import Carousel from 'react-bootstrap/Carousel'
 import { Link } from 'react-router-dom';
 import { HappyTravel } from '../../App';
 import TravelPlace from '../../fakedata/TravelPlace';
-import Navbar from '../Navbar/Navbar';
+import NavbarLight from '../NavbarLight/NavbarLight';
 import "./Header.css";
 
 
@@ -12,16 +12,18 @@ const Header = () => {
     return (
         <>
         
-        <Navbar></Navbar>
+        <NavbarLight></NavbarLight>
         <Carousel>
             {
             TravelPlace.map(item => 
             <Carousel.Item className="carousel-item" key={item.id}>
-            <img
-            className="d-block w-100 carousel-img"
-            src={item.image}
-            alt="Third slide"
-            />
+            <div className="car-overlay">
+                <img
+                className="d-block w-100 carousel-img"
+                src={item.image}
+                alt="Third slide"
+                />
+            </div>
             
             <Carousel.Caption>
             <h3 className="carousel-title">{item.name}</h3>

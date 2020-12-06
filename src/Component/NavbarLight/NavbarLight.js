@@ -1,13 +1,14 @@
+import React from 'react';
 import { Button } from '@material-ui/core';
-import React, { useState } from 'react';
 import logo from "../../image/Logo.png";
-import "./Navbar.css";
+import "../Navbar/Navbar.css";
 
-const Navbar = () => {
-    
-     return (
-        <div className="navbar">
-            <img className="nav-logo" src={logo} alt=""/>
+const NavbarLight = () => {
+    return (
+        <div className="navbar navbar-light">
+            <div className="nav-logo-white">
+               
+            </div>
             <input className="nav-search" type="text" name="search" id="search" placeholder="Search Travel Spot"/>
             <ul className="nav-collection">
                 <li className="nav-item">News</li>
@@ -22,4 +23,4 @@ const Navbar = () => {
     );
 };
 
-export default Navbar;
+export default NavbarLight;

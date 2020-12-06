@@ -8,8 +8,25 @@
     align-items: center;  
     background-color: transparent;
     z-index: 100;
-    color: #ffffff;
+    color: #000000;
 }
+
+.navbar-light {
+    color: #ffffff !important;
+}
+
+
+/* Experiment */
+.nav-logo-white {
+    width:94px;
+    height:64px;
+    display:inline-block;
+    background:url(../../image/Logo.png)center/cover,
+    rgba(255, 255, 255, 0);
+    position:relative;
+  }
+  
+/* Experiment */
 
 .nav-logo {
     width: 80px;
@@ -23,4 +40,10 @@
 
 .nav-search {
     flex-basis: 25%;
+}
+
+.nav-btn {
+    background-color: #f9a51a !important;
+    outline: none !important;
+    color: #000000 !important;
 }
