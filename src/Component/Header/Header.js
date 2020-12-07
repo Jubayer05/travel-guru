@@ -8,11 +8,14 @@ import "./Header.css";
 
 
 const Header = () => {
-   const [foodInfo, setFoodInfo] = useContext(HappyTravel)
+   const [travelInfo, setTravelInfo] = useContext(HappyTravel)
     return (
-        <>
+        <div className="header-container">
         
         <NavbarLight></NavbarLight>
+            <span className="place-name place-name-1">Cox'x Bazar</span>
+            <span className="place-name place-name-2">Srimongol</span>
+            <span className="place-name place-name-3">Sundarbans</span>
         <Carousel>
             {
             TravelPlace.map(item => 
@@ -28,12 +31,12 @@ const Header = () => {
             <Carousel.Caption>
             <h3 className="carousel-title">{item.name}</h3>
             <p>{item.detail}</p>
-            <Link onClick={() => setFoodInfo(item)} to={'/viewDetail/'+item.id}>Learn More</Link>
+            <Link onClick={() => setTravelInfo({...travelInfo, item})} to={'/viewDetail/'+item.id}>Learn More</Link>
                 </Carousel.Caption>
             </Carousel.Item>)
             }
         </Carousel>
-        </>
+        </div>
     );
 };
 export default Header;

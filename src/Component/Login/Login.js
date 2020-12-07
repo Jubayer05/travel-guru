@@ -1,5 +1,5 @@
 import { Button, Checkbox, TextField } from '@material-ui/core';
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import Navbar from '../Navbar/Navbar';
 import facebook from "../../image/fb.png";
 import google from "../../image/google.png";
@@ -7,13 +7,19 @@ import "./Login.css";
 import firebase from "firebase/app";
 import "firebase/auth";
 import firebaseConfig from '../../firebase.config';
+import { HappyTravel } from '../../App';
 
 firebase.initializeApp(firebaseConfig);
 
 const Login = () => {
+    const [travelInfo, setTravelInfo] = useContext(HappyTravel);
     const [toggle, setToggle] = useState(false);
     const [checked, setChecked] = React.useState(true);
-    const [userInfo, setUserInfo] = useState({});
+    const [userInfo, setUserInfo] = useState({
+        isSignedIn: false,
+        displayName: "",
+        email: ""
+    });
 
     const handleChange = (e) => {
         setChecked(e.target.checked);
@@ -27,10 +33,14 @@ const Login = () => {
             userInfo[e.target.name] = e.target.value;
         } 
         if(e.target.name === "email") {
-            userInfo[e.target.name] = e.target.value;
+            if(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(e.target.value)) {
+                userInfo[e.target.name] = e.target.value;
+            }
         } 
         if(e.target.name === "password") {
-            userInfo[e.target.name] = e.target.value;
+            if(e.target.value.length >= 6) {
+                userInfo[e.target.name] = e.target.value;
+            }
         }
         if(e.target.name === "confirmPassword") {
             userInfo[e.target.name] = e.target.value;
@@ -53,7 +63,10 @@ const Login = () => {
     }).catch(function(error) {
     // An error happened.
     });
-    console.log(user);
+    setTravelInfo({...travelInfo, 
+        isSignedIn: true,
+        displayName: userInfo.firstName + ' ' + userInfo.lastName
+    })
   })
   .catch((error) => {
     var errorMessage = error.message;
@@ -71,7 +84,10 @@ else {
     const handleSignIn = (e) => {
     firebase.auth().signInWithEmailAndPassword(userInfo.email, userInfo.password)
    .then((user) => {
-       console.log("Sign In Success");
+       console.log(user)
+        setTravelInfo({...travelInfo, 
+            isSignedIn: true,
+            displayName: user.user.displayName,})
    })
    .catch((error) => {
     var errorMessage = error.message;
@@ -87,8 +103,10 @@ e.preventDefault();
     const handleGoogleSignIn = (e) => {
         firebase.auth().signInWithPopup(googleProvider).then(function(result) {
             const userName = result.user.displayName;
-            const photoUrl = result.user.photoURL;
-            console.log(userName, photoUrl);
+                setTravelInfo({...travelInfo, 
+                    isSignedIn: true,
+                    displayName: userName,
+                })
           }).catch(function(error) {
             const errorMessage = error.message;
             console.log(errorMessage);

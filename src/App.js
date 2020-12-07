@@ -9,7 +9,11 @@ import Login from './Component/Login/Login';
 
 export const HappyTravel = createContext();
 function App() {
-  const [travelInfo, setTravelInfo] = useState();
+  const [travelInfo, setTravelInfo] = useState({
+    isSignedIn: false,
+    displayName: ""
+  });
+  console.log(travelInfo)
   return (
     <HappyTravel.Provider value={[travelInfo, setTravelInfo]}>
       <Router>
